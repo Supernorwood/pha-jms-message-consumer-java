@@ -19,6 +19,7 @@ public class JMSQueueConsumerFileHelper {
         if (data == null) {
 
             return false;
+
         } else if (outputFile == null) {
 
             return false;
