@@ -9,24 +9,15 @@ public class JMSQueueConsumerRunner {
 
     public static void main(String[] args) throws JMSException {
 
-        System.out.println("I am the JMS Consumer!");
-
-        System.out.println("trying to read from the target Queue");
-
         JMSQueueConsumer jmsQueueProducer = new JMSQueueConsumer("localhost", 61616, "PHA_FORM_A");
 
-        Object someMessage = jmsQueueProducer.getMessage();
+        Object messageFromQueue = jmsQueueProducer.getMessage();
 
-        Long rando = new Date().getTime();
-        System.out.println("the object message: ");
-        System.out.println(someMessage);
+        Long currentDateAndTime = new Date().getTime();
 
-        File outputfile = new File("some-file" + rando + ".dat");
-        System.out.println("output file: ");
+        File outputfile = new File("PHA_FORM_A" + "-validate-and-transform-pha-form-a-data" + currentDateAndTime + ".dat");
 
-        System.out.println(outputfile.getAbsolutePath());
-
-        JMSQueueConsumerFileHelper.writeToFile(someMessage, outputfile);
+        JMSQueueConsumerFileHelper.writeToFile(messageFromQueue, outputfile);
 
     }
 }
