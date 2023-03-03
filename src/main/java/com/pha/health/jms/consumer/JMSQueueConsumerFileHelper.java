@@ -43,6 +43,7 @@ public class JMSQueueConsumerFileHelper {
         return true;
     }
 
+    // prevent this class from being instantiated.
     private JMSQueueConsumerFileHelper() {
     }
 }

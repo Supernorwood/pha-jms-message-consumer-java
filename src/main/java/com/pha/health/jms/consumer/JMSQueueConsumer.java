@@ -13,7 +13,6 @@ import org.apache.activemq.command.ActiveMQTextMessage;
 
 public class JMSQueueConsumer extends JMSQueueWorker {
 
-
     /**
      * Initialize a JMS Queue consumer given a target JMS Queue name
      *
@@ -85,7 +84,6 @@ public class JMSQueueConsumer extends JMSQueueWorker {
         connection = null;
         connectionFactory = null;
 
-       
         return parsedObject;
     }
 
